@@ -1,0 +1,16 @@
+﻿@model string
+
+@{
+    Layout = null;
+    string number = Model.Split(',')[0].ToString();
+    string type = Model.Split(',')[1].ToString();
+    string date = Model.Split(',')[2].ToString();
+    string account = Model.Split(',')[3].ToString();
+}
+
+<tr>
+    <td>@(number)</td>
+    <td>@(type)</td>
+    <td>@(date)</td>
+    <td>@(account)</td>
+</tr>

@@ -1,13 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
-namespace MyHomework.Controllers
+namespace Session01_Homework.Controllers
 {
     public class HomeController : Controller
     {
+        public ActionResult Account()
+        {
+            return View();
+        }
+
+        public ActionResult ForAccount(int i, int a)
+        {
+            ViewData.Model = string.Format("{0},{1},{2},{3}", i, i % 2 == 0 ? "收入" : "支出", DateTime.Now.AddDays(i - 1).ToString("yyyy-MM-dd"), string.Format("${0}", a));
+            return View();
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -22,7 +30,7 @@ namespace MyHomework.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "你好,我是陳漢克";
 
             return View();
         }
